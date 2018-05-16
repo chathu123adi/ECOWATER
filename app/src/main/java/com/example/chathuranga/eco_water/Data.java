@@ -103,4 +103,13 @@ public class Data extends AsyncTask<Void,Void,Void>{
         }
         return null;
     }
+
+    //    ui thread
+    @Override
+    protected void onPostExecute(Void aVoid) {
+        super.onPostExecute(aVoid);
+
+        // Set the saveTheParsedData variable  data to text view
+        Fetch_data.data.setText(this.saveTheParsedData);
+    }
 }
